@@ -9,12 +9,12 @@ class Bless < Thor
 
   desc 'tidy', 'a tiny ritual between tasks or attempts'
   def tidy
-    create_file(options[:litany], verbose: false) unless File.exists? options[:litany]
+    create_file(options[:litany], verbose: false) unless File.exist? options[:litany]
     say 'Breathe.'
     notate 'What have you just completed?', 'done'
 
     clean = false
-    until clean do
+    until clean
       clean = yes? 'Have you cleared your space of your previous work?'
     end
 
