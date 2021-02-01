@@ -70,3 +70,5 @@ class Bless < Thor
     end
   end
 end
+
+Bless.start(ARGV)
